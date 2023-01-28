@@ -10,6 +10,7 @@ mccabe==0.7.0
 Pillow==9.4.0
 platformdirs==2.6.2
 pylint==2.15.10
+python-decouple==3.7
 pytz==2022.7.1
 sqlparse==0.4.3
 tomli==2.0.1
