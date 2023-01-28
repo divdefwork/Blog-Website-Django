@@ -4,6 +4,8 @@
 
 ### [Django Tutorials Bangla - How to Build a Blog Website - YouTube](https://www.youtube.com/playlist?list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht)
 
+###### [Download Template](https://templatemo.com/tm-551-stand-blog)
+
 ###### [GitHub](https://github.com/MoinulHossainNabil/Blog-Website-Django-Tutorials-Youtube)
 
 Короткий опис та особливості проекту
