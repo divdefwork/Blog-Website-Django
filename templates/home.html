@@ -27,7 +27,7 @@
                                             <ul class="post-info">
                                                 <li>
                                                     <a href="{% url 'view_user_information' blog.user.username %}">
-                                                        {{ blog.user.username}}
+                                                        {{ blog.user.username|title }}
                                                     </a>
                                                 </li>
                                                 <li>
@@ -37,8 +37,8 @@
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        {{blog.blog_comments.all.count}}
-                                                        comments
+                                                        {{ blog.blog_comments.all.count|title }}
+                                                        Коментарі
                                                     </a>
                                                 </li>
                                             </ul>
@@ -56,7 +56,7 @@
                                                                 {% for tag in blog.tags.all %}
                                                                     <li>
                                                                         <a href="#">
-                                                                            {{tag.title}}
+                                                                            {{ tag.title|title }}
                                                                         </a>
                                                                     </li>
                                                                 {% endfor %}
@@ -84,19 +84,22 @@
                                     </div>
                                 </div>
                             {% endfor %}
+
                             <div class="col-lg-12">
                                 <div class="main-button">
                                     <a href="{% url 'blogs' %}">
-                                        View All Posts
+                                        Переглянути всі дописи
                                     </a>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
 
                 <!-- Sidbar -->
                 {% include 'sidebar.html' %}
+
             </div>
         </div>
     </section>

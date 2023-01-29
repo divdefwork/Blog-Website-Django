@@ -37,7 +37,7 @@
 
 ##### ✅  [... Перегляд списку блогу і нумерація сторінок | Частина 6](https://www.youtube.com/watch?v=3pvAcX7LnZs&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=6&t=2s)
 
-##### ❓ [... Фільтрація блогів | Частина 7](https://www.youtube.com/watch?v=gHUqtwd8TAM&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=7)
+##### ✅  [... Фільтрація блогів | Частина 7](https://www.youtube.com/watch?v=gHUqtwd8TAM&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=7)
 
 ##### [... Подробиці блогу | Частина 8](https://www.youtube.com/watch?v=Nip8eGeXz44&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=9)
 
