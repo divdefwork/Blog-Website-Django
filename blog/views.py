@@ -120,6 +120,7 @@ def blog_details(request, slug):
                 blog=blog,
                 text=form.cleaned_data.get('text')
             )
+
             return redirect('blog_details', slug=slug)
 
     context = {

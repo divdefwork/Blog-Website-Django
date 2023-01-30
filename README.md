@@ -39,9 +39,9 @@
 
 ##### ✅  [... Фільтрація блогів | Частина 7](https://www.youtube.com/watch?v=gHUqtwd8TAM&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=7)
 
-##### [... Подробиці блогу | Частина 8](https://www.youtube.com/watch?v=Nip8eGeXz44&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=9)
+##### ✅ [... Подробиці блогу | Частина 8](https://www.youtube.com/watch?v=Nip8eGeXz44&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=9)
 
-##### []()
+##### [... Коментувати та відповідати | Частина 9](https://www.youtube.com/watch?v=-kZScztai7s&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=10)
 
 ##### []()
 
