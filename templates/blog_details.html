@@ -122,6 +122,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="col-lg-12">
                                 <div class="sidebar-item comments">
                                     <div class="sidebar-heading">
@@ -174,22 +175,20 @@
                                                 {% for reply in comment.comment_replies.all %}
                                                     <li class="replied">
                                                         <div class="author-thumb">
-                                                            <img src="{{reply.user.get_profile_picture}}" alt="">
+                                                            <img src="{{ reply.user.get_profile_picture }}" alt="">
                                                         </div>
                                                         <div class="right-content">
                                                             <h4>
-                                                                {{ reply.user.username }}
+                                                                {{ reply.user.username|title }}
                                                                 <span>
                                                                     {{ reply.created_date }}
                                                                 </span>
                                                             </h4>
-                                                            <p>{{ reply.text }}
-                                                            </p>
+                                                            <p>{{ reply.text }}</p>
                                                         </div>
                                                     </li>
                                                 {% endfor %}
                                             {% endfor %}
-
                                         </ul>
                                     </div>
                                 </div>
@@ -211,9 +210,13 @@
                                                 <div class="col-lg-12">
                                                     <fieldset>
                                                         {% if request.user.is_authenticated %}
-                                                            <button type="submit" id="form-submit" class="main-button">Надіслати</button>
+                                                            <button type="submit" id="form-submit" class="main-button">
+                                                                Надіслати
+                                                            </button>
                                                         {% else %}
-                                                            <a href="{% url 'login' %}" id="form-submit" class="main-button">Увійдіть, щоб коментувати</a>
+                                                            <a href="{% url 'login' %}" id="form-submit" class="main-button">
+                                                                Увійдіть, щоб коментувати
+                                                            </a>
                                                         {% endif %}
                                                     </fieldset>
                                                 </div>
@@ -226,7 +229,7 @@
                     </div>
                 </div>
 
-                <!--                {% include 'sidebar.html' %}-->
+                <!-- {% include 'sidebar.html' %} -->
 
                 <div class="col-lg-4">
                     <div class="sidebar">

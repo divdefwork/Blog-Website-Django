@@ -1,10 +1,10 @@
 asgiref==3.6.0
-astroid==2.13.3
+astroid==2.14.1
 dill==0.3.6
 Django==4.1.5
 django-ckeditor==6.5.1
 django-js-asset==2.0.0
-isort==5.11.4
+isort==5.12.0
 lazy-object-proxy==1.9.0
 mccabe==0.7.0
 Pillow==9.4.0
