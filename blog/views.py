@@ -35,7 +35,7 @@ def blogs(request):
     queryset = Blog.objects.order_by('-created_date')
     tags = Tag.objects.order_by('-created_date')
     page = request.GET.get('page', 1)
-    paginator = Paginator(queryset, 2)
+    paginator = Paginator(queryset, 3)
 
     try:
         blogs = paginator.page(page)
@@ -260,7 +260,7 @@ def add_blog(request):
                         )
                         blog.tags.add(new_tag)
 
-            messages.success(request, "Blog added successfully")
+            messages.success(request, "Блог успішно додано")
             return redirect('blog_details', slug=blog.slug)
         else:
             print(form.errors)
@@ -310,7 +310,7 @@ def update_blog(request, slug):
                         )
                         blog.tags.add(new_tag)
 
-            messages.success(request, "Blog updated successfully")
+            messages.success(request, "Блог успішно оновлено")
             return redirect('blog_details', slug=blog.slug)
         else:
             print(form.errors)

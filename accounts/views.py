@@ -10,7 +10,7 @@ from .forms import (
     UserProfileUpdateForm,
     ProfilePictureUpdateForm
 )
-from .decorators import  (
+from .decorators import (
     not_logged_in_required
 )
 from .models import Follow, User
@@ -33,11 +33,12 @@ def login_user(request):
                 login(request, user)
                 return redirect('home')
             else:
-                messages.warning(request, "Wrong credentials")
+                messages.warning(request, "Неправильні облікові дані")
 
     context = {
         "form": form
     }
+
     return render(request, 'login.html', context)
 
 
@@ -57,12 +58,13 @@ def register_user(request):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data.get('password'))
             user.save()
-            messages.success(request, "Registration sucessful")
+            messages.success(request, "Реєстрація успішна")
             return redirect('login')
 
     context = {
         "form": form
     }
+
     return render(request, 'registration.html', context)
 
 
@@ -70,15 +72,15 @@ def register_user(request):
 def profile(request):
     account = get_object_or_404(User, pk=request.user.pk)
     form = UserProfileUpdateForm(instance=account)
-    
+
     if request.method == "POST":
         if request.user.pk != account.pk:
             return redirect('home')
-        
+
         form = UserProfileUpdateForm(request.POST, instance=account)
         if form.is_valid():
             form.save()
-            messages.success(request, "Profile has been updated sucessfully")
+            messages.success(request, "Профіль успішно оновлено")
             return redirect('profile')
         else:
             print(form.errors)
@@ -87,25 +89,26 @@ def profile(request):
         "account": account,
         "form": form
     }
+
     return render(request, 'profile.html', context)
 
 
 @login_required
 def change_profile_picture(request):
     if request.method == "POST":
-        
+
         form = ProfilePictureUpdateForm(request.POST, request.FILES)
-        
+
         if form.is_valid():
             image = request.FILES['profile_image']
             user = get_object_or_404(User, pk=request.user.pk)
-            
+
             if request.user.pk != user.pk:
                 return redirect('home')
 
             user.profile_image = image
             user.save()
-            messages.success(request, "Profile image updated successfully")
+            messages.success(request, "Зображення профілю успішно оновлено")
 
         else:
             print(form.errors)
@@ -119,16 +122,16 @@ def view_user_information(request, username):
     muted = None
 
     if request.user.is_authenticated:
-        
+
         if request.user.id == account.id:
             return redirect("profile")
 
         followers = account.followers.filter(
-        followed_by__id=request.user.id
+            followed_by__id=request.user.id
         )
         if followers.exists():
             following = True
-    
+
     if following:
         queryset = followers.first()
         if queryset.muted:
@@ -141,10 +144,11 @@ def view_user_information(request, username):
         "following": following,
         "muted": muted
     }
+
     return render(request, "user_information.html", context)
 
 
-@login_required(login_url = "login")
+@login_required(login_url="login")
 def follow_or_unfollow_user(request, user_id):
     followed = get_object_or_404(User, id=user_id)
     followed_by = get_object_or_404(User, id=request.user.id)
@@ -174,7 +178,7 @@ def user_notifications(request):
     for notification in notifications:
         notification.is_seen = True
         notification.save()
-        
+
     return render(request, 'notifications.html')
 
 
@@ -197,4 +201,3 @@ def mute_or_unmute_user(request, user_id):
         instance.save()
 
     return redirect('view_user_information', username=user.username)
-

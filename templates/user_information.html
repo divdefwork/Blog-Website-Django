@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<section class="profile">
+    <section class="profile">
         <div class="container-fluid">
             <div class="row py-5">
                 <div class="col-md-4">
@@ -22,14 +22,14 @@
                             </li>
                             <li class="py-2">
                                 {% if following %}
-                                <a class="btn btn-primary text-decoration-none" href="{% url 'follow_or_unfollow_user' account.id %}">Unfollow</a>
-                                {% if muted %}
-                                <a class="btn btn-primary text-decoration-none" href="{% url 'mute_or_unmute_user' account.id %}">Unmute</a>
+                                    <a class="btn btn-primary text-decoration-none" href="{% url 'follow_or_unfollow_user' account.id %}">Unfollow</a>
+                                    {% if muted %}
+                                        <a class="btn btn-primary text-decoration-none" href="{% url 'mute_or_unmute_user' account.id %}">Unmute</a>
+                                    {% else %}
+                                        <a class="btn btn-primary text-decoration-none" href="{% url 'mute_or_unmute_user' account.id %}">Mute</a>
+                                    {% endif %}
                                 {% else %}
-                                <a class="btn btn-primary text-decoration-none" href="{% url 'mute_or_unmute_user' account.id %}">Mute</a>
-                                {% endif %}
-                                {% else %}
-                                <a class="btn btn-primary text-decoration-none" href="{% url 'follow_or_unfollow_user' account.id %}">Follow</a>
+                                    <a class="btn btn-primary text-decoration-none" href="{% url 'follow_or_unfollow_user' account.id %}">Follow</a>
                                 {% endif %}
                             </li>
                         </ul>
@@ -37,24 +37,26 @@
                 </div>
                 <div class="row pt-1 mb-2">
                     <div class="col-md-12 mb-2">
-                    <h4 class="text-monospace text-center">{{account.username}}'s blogs</h4>
+                        <h4 class="text-monospace text-center">
+                            {{ account.username }}'s blogs
+                        </h4>
                     </div>
                     <div class="col-md-12">
                         <ul class="list-group list-group-flush">
                             {% for blog in account.user_blogs.all %}
-                            <li class="list-group-item py-3">
-                                <a href="{% url 'blog_details' blog.slug %}">
-                                    <p>{{blog.title}}</p>
-                                    <p>{{blog.created_date}}</p>
-                                </a>
-                            </li>
+                                <li class="list-group-item py-3">
+                                    <a href="{% url 'blog_details' blog.slug %}">
+                                        <p>{{blog.title}}</p>
+                                        <p>{{blog.created_date}}</p>
+                                    </a>
+                                </li>
                             {% endfor %}
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-</section>
+    </section>
 
 
 {% endblock content %}
