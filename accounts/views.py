@@ -195,7 +195,6 @@ def mute_or_unmute_user(request, user_id):
     if instance.muted:
         instance.muted = False
         instance.save()
-
     else:
         instance.muted = True
         instance.save()

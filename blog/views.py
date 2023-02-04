@@ -160,7 +160,6 @@ def like_blog(request, pk):
         blog.likes.remove(request.user)
         context['liked'] = False
         context['like_count'] = blog.likes.all().count()
-
     else:
         blog.likes.add(request.user)
         context['liked'] = True
