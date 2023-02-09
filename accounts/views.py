@@ -1,20 +1,18 @@
-from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
-from django.views.decorators.cache import never_cache
 from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.cache import never_cache
 
+from notification.models import Notificaiton
+from .decorators import (not_logged_in_required)
 from .forms import (
     UserRegistrationForm,
     LoginForm,
     UserProfileUpdateForm,
     ProfilePictureUpdateForm
 )
-from .decorators import (
-    not_logged_in_required
-)
 from .models import Follow, User
-from notification.models import Notificaiton
 
 
 @never_cache

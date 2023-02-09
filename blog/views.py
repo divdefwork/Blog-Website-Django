@@ -189,7 +189,6 @@ def search_blogs(request):
         }
 
         return render(request, 'search.html', context)
-
     else:
         return redirect('home')
 

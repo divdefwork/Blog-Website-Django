@@ -45,9 +45,9 @@
 
 ##### ✅ [... Ajax Подобається коментар) | Частина 10](https://www.youtube.com/watch?v=7ZZKXnknDp4&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=10)
 
-##### [,,, Пошук у блогах | Частина 11](https://www.youtube.com/watch?v=kxtc3LL9d_M&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=12)
+##### ✅ [,,, Пошук у блогах | Частина 11](https://www.youtube.com/watch?v=kxtc3LL9d_M&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=12)
 
-##### []()
+##### [Інтерфейс реєстрації та входу користувача | Частина 12](https://www.youtube.com/watch?v=e5ZPBE3Mn3Y&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=12)
 
 ##### []()
 

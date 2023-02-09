@@ -61,10 +61,12 @@
                         </li>
                     {% endif %}
                 </ul>
+
                 <form class="form-inline d-flex flex-nowrap my-2 ml-auto search-form" action="{% url 'search_blogs' %}" method="GET">
-                    <input class="form-control px-5" name="search" type="text" placeholder="Search blogs" required>
-                    <button class="btn btn-primary ml-1">Search</button>
+                    <input class="form-control px-5" name="search" type="text" placeholder="Пошук у блогах" required>
+                    <button class="btn btn-primary ml-1">Пошук</button>
                 </form>
+
             </div>
         </div>
     </nav>
