@@ -49,7 +49,17 @@
 
 ##### ✅ [... Інтерфейс реєстрації та входу користувача | Частина 12](https://www.youtube.com/watch?v=e5ZPBE3Mn3Y&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=12)
 
-##### [... Реєстрація користувача | Частина 13](https://www.youtube.com/watch?v=P5poo9ekI-U&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=13)
+##### ✅  [... Реєстрація користувача | Частина 13](https://www.youtube.com/watch?v=P5poo9ekI-U&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=13)
+
+##### ✅ [... Автентифікація користувача | Частина 14](https://www.youtube.com/watch?v=rxj5m6pgs5U&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=14)
+
+##### ✅ [... Спеціальний декоратор | Частина 15](https://www.youtube.com/watch?v=Yov_h6igvr8&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=15&t=1s)
+
+##### [... Дизайн інтерфейсу користувача профілю | Частина 16](https://www.youtube.com/watch?v=QL0g0ALVN50&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=17)
+
+##### []()
+
+##### []()
 
 ##### []()
 
