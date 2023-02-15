@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} My Pofile {% endblock title %}
+
+{% block title %} Мій профіль {% endblock title %}
 
 {% block content %}
 
@@ -12,19 +13,25 @@
                         <img class="rounded rounded-circle profile-picture" src="{{request.user.get_profile_picture}}" alt="">
                         <ul class="text-center py-3">
                             <li class="py-2">
-                                <span>Posts: <strong>{{account.user_blogs.count}}</strong></span>
+                                <span>Пости:
+                                    <strong>{{ account.user_blogs.count }}</strong>
+                                </span>
                             </li>
                             <li class="py-2">
-                                <span>Follwers: <strong>{{account.followers.all.count}}</strong></span>
+                                <span>Follwers:
+                                    <strong>{{ account.followers.all.count }}</strong>
+                                </span>
                             </li>
                             <li class="py-2">
-                                <span>Following: <strong>{{account.user_follows.all.count}}</strong></span>
+                                <span>Following:
+                                    <strong>{{ account.user_follows.all.count }}</strong>
+                                </span>
                             </li>
                         </ul>
                     </div>
                     <div class="text-center pt-2 pb-1">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Update Profile Picture
+                        Оновити зображення профілю
                     </button>
                     
                     <!-- Modal -->
@@ -32,7 +39,9 @@
                         <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Update Profile Picture</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">
+                                Оновити зображення профілю
+                            </h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -44,7 +53,9 @@
                                     <input class="form-control" type="file" name="profile_image" required>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                    <button type="submit" class="btn btn-primary">
+                                        Зберегти зміни
+                                    </button>
                                 </div>
                             </form>
                             </div>
@@ -55,12 +66,12 @@
                     <ul class="list-group text-center mt-2 mb-5">
                         <li class="list-group-item my-1">
                             <a class="text-decoration-none" href="{% url 'my_blogs' %}">
-                                My Blogs
+                                Мої блоги
                             </a>
                         </li>
                         <li class="list-group-item my-1">
                             <a class="text-decoration-none" href="{% url 'add_blog' %}">
-                                Add Blog
+                                Додати блог
                             </a>
                         </li>
                     </ul>
@@ -77,41 +88,49 @@
                         {% for error in form.non_field_errors %}
                         <div class="alert danger">
                             <p class="text-danger">
-                                {{error}}
+                                {{ error }}
                             </p>
                         </div>
                         {% endfor %}
                         {% endif %}
                         <div class="form-group">
-                            <label for="firstname">Firstname</label>
-                            <input class="form-control" name="first_name"  value="{{account.first_name}}" type="text">
-                            <p class="text-danger error py-1">{{form.first_name.errors}}</p>
+                            <label for="firstname">Ім'я</label>
+                            <input class="form-control" name="first_name" value="{{ account.first_name }}" type="text">
+                            <p class="text-danger error py-1">
+                                {{ form.first_name.errors }}
+                            </p>
                         </div>
                         <div class="form-group">
-                            <label for="lastname">Lastname</label>
-                            <input class="form-control" name="last_name"  value="{{account.last_name}}" type="text">
-                            <p class="text-danger error py-1">{{form.last_name.errors}}</p>
+                            <label for="lastname">Прізвище</label>
+                            <input class="form-control" name="last_name" value="{{ account.last_name }}" type="text">
+                            <p class="text-danger error py-1">
+                                {{ form.last_name.errors }}
+                            </p>
                         </div>
                         <div class="form-group">
-                            <label for="username">Username</label>
-                            <input class="form-control" name="username"  value="{{account.username}}" type="text">
-                            <p class="text-danger error py-1">{{form.username.errors}}</p>
+                            <label for="username">Ім'я користувача</label>
+                            <input class="form-control" name="username" value="{{ account.username }}" type="text">
+                            <p class="text-danger error py-1">
+                                {{ form.username.errors }}
+                            </p>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input class="form-control" name="email"  value="{{account.email}}" type="email">
-                            <p class="text-danger error py-1">{{form.email.errors}}</p>
+                            <input class="form-control" name="email" value="{{ account.email }}" type="email">
+                            <p class="text-danger error py-1">
+                                {{ form.email.errors }}
+                            </p>
                         </div>
                         <div class="form-group">
-                            <label for="new_password">New Password</label>
+                            <label for="new_password">Новий пароль</label>
                             <input class="form-control" name="new_password"  value="" type="password">
                         </div>
                         <div class="form-group">
-                            <label for="confirm_password">Confirm Password</label>
+                            <label for="confirm_password">Підтвердьте пароль</label>
                             <input class="form-control" name="confirm_password"  value="" type="password">
                         </div>
                         <div class="form-group mt-2">
-                            <button class="btn btn-primary">Update</button>
+                            <button class="btn btn-primary">Оновити</button>
                         </div>
                     </form>
                 </div>

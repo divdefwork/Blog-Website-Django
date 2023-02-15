@@ -55,9 +55,9 @@
 
 ##### ✅ [... Спеціальний декоратор | Частина 15](https://www.youtube.com/watch?v=Yov_h6igvr8&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=15&t=1s)
 
-##### [... Дизайн інтерфейсу користувача профілю | Частина 16](https://www.youtube.com/watch?v=QL0g0ALVN50&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=17)
+##### ✅ [... Дизайн інтерфейсу користувача профілю | Частина 16](https://www.youtube.com/watch?v=QL0g0ALVN50&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=17)
 
-##### []()
+##### [... Оновлення профілю користувача | Частина 17](https://www.youtube.com/watch?v=0H6mPBAtSls&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=18)
 
 ##### []()
 

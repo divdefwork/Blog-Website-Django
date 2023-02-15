@@ -88,6 +88,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+# use_tz = true use_tz = true use_tz = true use_tz = true
+
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'assets']
