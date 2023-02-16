@@ -57,13 +57,13 @@
 
 ##### ✅ [... Дизайн інтерфейсу користувача профілю | Частина 16](https://www.youtube.com/watch?v=QL0g0ALVN50&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=17)
 
-##### [... Оновлення профілю користувача | Частина 17](https://www.youtube.com/watch?v=0H6mPBAtSls&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=18)
+##### ✅ [... Оновлення профілю користувача | Частина 17](https://www.youtube.com/watch?v=0H6mPBAtSls&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=18)
 
-##### []()
+##### ✅ [... Список власних блогів користувача | Частина 18](https://www.youtube.com/watch?v=kVsOw-Byw8k&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=19)
 
-##### []()
+##### [... Додати новий блог | Частина 19](https://www.youtube.com/watch?v=R4QKMqh9v5Q&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=20)
 
-##### []()
+##### [... ]()
 
 ##### []()
 
