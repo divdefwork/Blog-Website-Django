@@ -61,11 +61,11 @@
 
 ##### ✅ [... Список власних блогів користувача | Частина 18](https://www.youtube.com/watch?v=kVsOw-Byw8k&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=19)
 
-##### [... Додати новий блог | Частина 19](https://www.youtube.com/watch?v=R4QKMqh9v5Q&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=20)
+##### ✅ [... Додати новий блог | Частина 19](https://www.youtube.com/watch?v=R4QKMqh9v5Q&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=20)
+
+##### ✅ [... Виправити проблему розбиття сторінок | Частина 20](https://www.youtube.com/watch?v=EIhWtdWzhMo&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=22)
 
 ##### [... ]()
-
-##### []()
 
 ##### []()
 
