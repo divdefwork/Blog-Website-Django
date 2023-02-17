@@ -1,6 +1,8 @@
 # Django Blog Website
 
-***Це проєкт є частиною серії на YouTube, яка навчає, як створити веб-сайт блогу за допомогою DjangoЦей проект є частиною серії на YouTube, яка навчає, як створити веб-сайт блогу за допомогою Django.***
+***Це проєкт є частиною серії на YouTube, яка навчає, як створити веб-сайт
+блогу за допомогою DjangoЦей проект є частиною серії на YouTube, яка навчає, як
+створити веб-сайт блогу за допомогою Django.***
 
 ### [Django Tutorials Bangla - How to Build a Blog Website - YouTube](https://www.youtube.com/playlist?list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht)
 
@@ -65,17 +67,25 @@
 
 ##### ✅ [... Виправити проблему розбиття сторінок | Частина 20](https://www.youtube.com/watch?v=EIhWtdWzhMo&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=22)
 
-##### [... ]()
+##### ✅ [... Створення унікальний Slug| Частина 21](https://www.youtube.com/watch?v=S8aX2Gcn3wY&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=22)
+
+##### [... Оновити та видалити блог | Частина 22](https://www.youtube.com/watch?v=yLQMbHktXmQ&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=23)
 
 ##### []()
 
 ##### []()
 
+##### []()
 
+##### []()
+
+##### []()
+
+##### []()
 
 ---
 
- ✅ 
+✅
 
 #### [Generate random secret key](https://djecrety.ir/)
 
@@ -124,6 +134,7 @@ python3 manage.py createsuperuser
 🔗 [.gitignore](https://www.toptal.com/developers/gitignore)
 
 ❗
+
 ```bash
 python3 manage.py runserver
 ```
