@@ -35,7 +35,7 @@ def blogs(request):
     queryset = Blog.objects.order_by('-created_date')
     tags = Tag.objects.order_by('-created_date')
     page = request.GET.get('page', 1)
-    paginator = Paginator(queryset, 3)
+    paginator = Paginator(queryset, 4)
 
     try:
         blogs = paginator.page(page)
@@ -59,7 +59,7 @@ def category_blogs(request, slug):
     queryset = category.category_blogs.all()
     tags = Tag.objects.order_by('-created_date')[:5]
     page = request.GET.get('page', 1)
-    paginator = Paginator(queryset, 2)
+    paginator = Paginator(queryset, 4)
     all_blogs = Blog.objects.order_by('-created_date')[:5]
 
     try:
@@ -84,7 +84,7 @@ def tag_blogs(request, slug):
     queryset = tag.tag_blogs.all()
     tags = Tag.objects.order_by('-created_date')[:5]
     page = request.GET.get('page', 1)
-    paginator = Paginator(queryset, 2)
+    paginator = Paginator(queryset, 4)
     all_blogs = Blog.objects.order_by('-created_date')[:5]
 
     try:
