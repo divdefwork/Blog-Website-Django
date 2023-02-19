@@ -39,4 +39,5 @@ class Follow(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
-        return f"{self.followed_by.username} started following {self.followed.username}"
+        return f"{self.followed_by.username} почав стежити за" \
+               f" {self.followed.username}"

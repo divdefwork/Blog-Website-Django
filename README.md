@@ -75,9 +75,9 @@
 
 ##### ✅ [... Переглянути профіль інших | Частина 24](https://www.youtube.com/watch?v=RNxMFv2mCYA&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=25)
 
-##### [... Слідкувати за користувачем і скасувати його | Частина 25](https://www.youtube.com/watch?v=X7SIBMOsGIs&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=27)
+##### ✅ [... Слідкувати за користувачем і скасувати його | Частина 25](https://www.youtube.com/watch?v=X7SIBMOsGIs&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=27)
 
-##### []()
+##### [... Загальне відношення для сповіщення | Частина 26](https://www.youtube.com/watch?v=NfW0rJFL3lI&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=27&t=9s)
 
 ##### []()
 
