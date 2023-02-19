@@ -71,11 +71,11 @@
 
 ##### ✅ [... Оновити та видалити блог | Частина 22](https://www.youtube.com/watch?v=yLQMbHktXmQ&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=23)
 
-##### [... Інтеграція Django CKEditor | Частина 23](https://www.youtube.com/watch?v=_I48WH9i85U&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=24)
+##### ✅ [... Інтеграція Django CKEditor | Частина 23](https://www.youtube.com/watch?v=_I48WH9i85U&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=24)
 
-##### [... Переглянути профіль інших | Частина 24](https://www.youtube.com/watch?v=RNxMFv2mCYA&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=25)
+##### ✅ [... Переглянути профіль інших | Частина 24](https://www.youtube.com/watch?v=RNxMFv2mCYA&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=25)
 
-##### []()
+##### [... Слідкувати за користувачем і скасувати його | Частина 25](https://www.youtube.com/watch?v=X7SIBMOsGIs&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=27)
 
 ##### []()
 

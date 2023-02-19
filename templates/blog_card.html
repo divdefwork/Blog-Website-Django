@@ -29,7 +29,7 @@
                 </li>
             </ul>
             <p>
-                {{ blog.description|truncatewords:20 }}
+                {{ blog.description|safe|truncatewords:20 }}
             </p>
 
             <div class="post-options">

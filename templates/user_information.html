@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} My Pofile {% endblock title %}
+
+{% block title %} Мій профіль {% endblock title %}
 
 {% block content %}
-
     <section class="profile">
         <div class="container-fluid">
             <div class="row py-5">
@@ -12,24 +12,34 @@
                         <img class="rounded rounded-circle profile-picture" src="{{account.get_profile_picture}}" alt="">
                         <ul class="text-center py-3">
                             <li class="py-2">
-                                <span>Posts: <strong>{{account.user_blogs.count}}</strong></span>
+                                <span>Пости:
+                                    <strong>{{ account.user_blogs.count }}</strong>
+                                </span>
                             </li>
                             <li class="py-2">
-                                <span>Follwers: <strong>{{account.user_followers.count}}</strong></span>
+                                <span>Followers(Підписники):
+                                    <strong>{{ account.user_followers.count }}</strong>
+                                </span>
                             </li>
                             <li class="py-2">
-                                <span>Following: <strong>{{account.user_follows.count}}</strong></span>
+                                <span>Following(Підписки):
+                                    <strong>{{ account.user_follows.count }}</strong>
+                                </span>
                             </li>
                             <li class="py-2">
                                 {% if following %}
-                                    <a class="btn btn-primary text-decoration-none" href="{% url 'follow_or_unfollow_user' account.id %}">Unfollow</a>
+                                    <a class="btn btn-primary text-decoration-none" href="{% url 'follow_or_unfollow_user' account.id %}">Відписатися</a>
                                     {% if muted %}
-                                        <a class="btn btn-primary text-decoration-none" href="{% url 'mute_or_unmute_user' account.id %}">Unmute</a>
+                                        <a class="btn btn-primary text-decoration-none" href="{% url 'mute_or_unmute_user' account.id %}">
+                                            Unmute(сповіщати)
+                                        </a>
                                     {% else %}
-                                        <a class="btn btn-primary text-decoration-none" href="{% url 'mute_or_unmute_user' account.id %}">Mute</a>
+                                        <a class="btn btn-primary text-decoration-none" href="{% url 'mute_or_unmute_user' account.id %}">
+                                            Mute(не сповіщати)
+                                        </a>
                                     {% endif %}
                                 {% else %}
-                                    <a class="btn btn-primary text-decoration-none" href="{% url 'follow_or_unfollow_user' account.id %}">Follow</a>
+                                    <a class="btn btn-primary text-decoration-none" href="{% url 'follow_or_unfollow_user' account.id %}">Підписатися</a>
                                 {% endif %}
                             </li>
                         </ul>
@@ -38,7 +48,7 @@
                 <div class="row pt-1 mb-2">
                     <div class="col-md-12 mb-2">
                         <h4 class="text-monospace text-center">
-                            {{ account.username }}'s blogs
+                            {{ account.username }} блоги
                         </h4>
                     </div>
                     <div class="col-md-12">
@@ -46,8 +56,8 @@
                             {% for blog in account.user_blogs.all %}
                                 <li class="list-group-item py-3">
                                     <a href="{% url 'blog_details' blog.slug %}">
-                                        <p>{{blog.title}}</p>
-                                        <p>{{blog.created_date}}</p>
+                                        <p>{{ blog.title }}</p>
+                                        <p>{{ blog.created_date }}</p>
                                     </a>
                                 </li>
                             {% endfor %}
@@ -57,6 +67,4 @@
             </div>
         </div>
     </section>
-
-
 {% endblock content %}
