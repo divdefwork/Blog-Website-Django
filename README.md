@@ -77,7 +77,15 @@
 
 ##### ✅ [... Слідкувати за користувачем і скасувати його | Частина 25](https://www.youtube.com/watch?v=X7SIBMOsGIs&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=27)
 
-##### [... Загальне відношення для сповіщення | Частина 26](https://www.youtube.com/watch?v=NfW0rJFL3lI&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=27&t=9s)
+##### ✅ [... Загальне відношення для сповіщення | Частина 26](https://www.youtube.com/watch?v=NfW0rJFL3lI&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=27&t=9s)
+
+##### ✅ [... Створення сповіщень Django Signals | Частина 27](https://www.youtube.com/watch?v=Q1p8wy0dp44&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=28)
+
+##### [... Показати сповіщення користувача | Частина 28](https://www.youtube.com/watch?v=V0eCNd3yCj8&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=29)
+
+##### []()
+
+##### []()
 
 ##### []()
 
