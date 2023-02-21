@@ -81,11 +81,11 @@
 
 ##### ✅ [... Створення сповіщень Django Signals | Частина 27](https://www.youtube.com/watch?v=Q1p8wy0dp44&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=28)
 
-##### [... Показати сповіщення користувача | Частина 28](https://www.youtube.com/watch?v=V0eCNd3yCj8&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=29)
+##### ✅ [... Показати сповіщення користувача | Частина 28](https://www.youtube.com/watch?v=V0eCNd3yCj8&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=29)
 
-##### []()
+##### ✅ [... Вимкнути й увімкнути сповіщення | Частина 29](https://www.youtube.com/watch?v=5n_bNQCNZh8&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=30)
 
-##### []()
+##### [... Увійти за допомогою електронної пошти | Частина 30](https://www.youtube.com/watch?v=6ZWKVGV-0hE&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=31)
 
 ##### []()
 
