@@ -85,11 +85,11 @@
 
 ##### ✅ [... Вимкнути й увімкнути сповіщення | Частина 29](https://www.youtube.com/watch?v=5n_bNQCNZh8&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=30)
 
-##### [... Увійти за допомогою електронної пошти | Частина 30](https://www.youtube.com/watch?v=6ZWKVGV-0hE&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=31)
+##### ✅ [... Увійти за допомогою електронної пошти | Частина 30](https://www.youtube.com/watch?v=6ZWKVGV-0hE&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=31)
 
-##### []()
+##### [... Огляд проекту | Частина 31](https://www.youtube.com/watch?v=oeFL1mkwXpw&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=32)
 
-##### []()
+##### [... Розгорнути проект на Pythonanywhere | Частина 32](https://www.youtube.com/watch?v=xYl6Bk7gmXU&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=33)
 
 ---
 

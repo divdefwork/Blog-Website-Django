@@ -5,7 +5,8 @@ from accounts.models import User
 
 
 class EmailAuthenticationBackend(ModelBackend):
-    def authenticate(self, request, username=None, password=None, *args, **kwargs):
+    def authenticate(self, request, username=None, password=None, *args,
+                     **kwargs):
         try:
             user = User.objects.get(email=username)
             if user.check_password(password):
@@ -15,7 +16,6 @@ class EmailAuthenticationBackend(ModelBackend):
 
         except ObjectDoesNotExist:
             return None
-
 
     def get_user(self, user_id: int):
         try:
