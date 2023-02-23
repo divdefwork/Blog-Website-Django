@@ -89,7 +89,7 @@
 
 ##### ✅ [... Огляд проекту | Частина 31](https://www.youtube.com/watch?v=oeFL1mkwXpw&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=32)
 
-##### [... Розгорнути проект на Pythonanywhere | Частина 32](https://www.youtube.com/watch?v=xYl6Bk7gmXU&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=33)
+##### ✅ [... Розгорнути проект на Pythonanywhere | Частина 32](https://www.youtube.com/watch?v=xYl6Bk7gmXU&list=PLoomN1iY7V9neojqrkqPVvE0GdmfOTcht&index=33)
 
 ---
 
@@ -139,7 +139,7 @@ python3 manage.py createsuperuser
 
 🔗 [.gitignore](https://www.toptal.com/developers/gitignore)
 
-❗
+🔗 [Gitignore for a Django project](https://djangowaves.com/tips-tricks/gitignore-for-a-django-project/)
 
 ```bash
 python3 manage.py runserver
