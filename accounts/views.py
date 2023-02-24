@@ -37,7 +37,7 @@ def login_user(request):
         "form": form
     }
 
-    return render(request, 'login.html', context)
+    return render(request, 'accounts/login.html', context)
 
 
 def logout_user(request):
@@ -63,7 +63,7 @@ def register_user(request):
         "form": form
     }
 
-    return render(request, 'registration.html', context)
+    return render(request, 'accounts/registration.html', context)
 
 
 @login_required(login_url='login')
@@ -88,7 +88,7 @@ def profile(request):
         "form": form
     }
 
-    return render(request, 'profile.html', context)
+    return render(request, 'accounts/profile.html', context)
 
 
 @login_required
@@ -143,7 +143,7 @@ def view_user_information(request, username):
         "muted": muted
     }
 
-    return render(request, "user_information.html", context)
+    return render(request, "accounts/user_information.html", context)
 
 
 @login_required(login_url="login")
@@ -177,7 +177,7 @@ def user_notifications(request):
         notification.is_seen = True
         notification.save()
 
-    return render(request, 'notifications.html')
+    return render(request, 'accounts/notifications.html')
 
 
 @login_required(login_url='login')

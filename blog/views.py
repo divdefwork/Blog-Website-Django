@@ -28,7 +28,7 @@ def home(request):
         "tags": tags
     }
 
-    return render(request, 'home.html', context)
+    return render(request, 'blog/home.html', context)
 
 
 def blogs(request):
@@ -51,7 +51,7 @@ def blogs(request):
         "paginator": paginator
     }
 
-    return render(request, 'blogs.html', context)
+    return render(request, 'blog/blogs.html', context)
 
 
 def category_blogs(request, slug):
@@ -76,7 +76,7 @@ def category_blogs(request, slug):
         "all_blogs": all_blogs
     }
 
-    return render(request, 'category_blogs.html', context)
+    return render(request, 'blog/category_blogs.html', context)
 
 
 def tag_blogs(request, slug):
@@ -101,7 +101,7 @@ def tag_blogs(request, slug):
         "all_blogs": all_blogs
     }
 
-    return render(request, 'tag_blogs.html', context)
+    return render(request, 'blog/tag_blogs.html', context)
 
 
 def blog_details(request, slug):
@@ -131,7 +131,7 @@ def blog_details(request, slug):
         "liked_by": liked_by
     }
 
-    return render(request, 'blog_details.html', context)
+    return render(request, 'blog/blog_details.html', context)
 
 
 @login_required(login_url='login')
@@ -188,7 +188,7 @@ def search_blogs(request):
             "search_key": search_key
         }
 
-        return render(request, 'search.html', context)
+        return render(request, 'blog/search.html', context)
     else:
         return redirect('home')
 
@@ -207,7 +207,7 @@ def my_blogs(request):
             return redirect('home')
 
         blog.delete()
-        messages.success(request, "Your blog has been deleted!")
+        messages.success(request, "Ваш блог видалено!")
         return redirect('my_blogs')
 
     try:
@@ -223,7 +223,7 @@ def my_blogs(request):
         "paginator": paginator
     }
 
-    return render(request, 'my_blogs.html', context)
+    return render(request, 'blog/my_blogs.html', context)
 
 
 @login_required(login_url='login')
@@ -267,7 +267,7 @@ def add_blog(request):
         "form": form
     }
 
-    return render(request, 'add_blog.html', context)
+    return render(request, 'blog/add_blog.html', context)
 
 
 @login_required(login_url='login')
@@ -318,4 +318,4 @@ def update_blog(request, slug):
         "blog": blog
     }
 
-    return render(request, 'update_blog.html', context)
+    return render(request, 'blog/update_blog.html', context)
