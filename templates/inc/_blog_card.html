@@ -3,7 +3,9 @@
 <div class="col-lg-6">
     <div class="blog-post">
         <div class="blog-thumb">
-            <img src="{{ blog.banner.url }}" alt="" />
+            <a href="{% url 'blog_details' blog.slug %}">
+                <img src="{{ blog.banner.url }}" alt="" />
+            </a>
         </div>
         <div class="down-content">
             <span>{{ blog.category.title }}</span>
