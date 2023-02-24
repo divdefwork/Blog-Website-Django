@@ -18,13 +18,13 @@
                     <div class="all-blog-posts">
                         <div class="row">
                             {% for blog in blogs %}
-                                {% include 'blog_card.html' %}
+                                {% include 'inc/_blog_card.html' %}
                             {% endfor %}
                         </div>
                     </div>
                 </div>
 
-                {% include 'sidebar.html' with blogs=recent_blogs %}
+                {% include 'inc/_sidebar.html' with blogs=recent_blogs %}
 
             </div>
         </div>

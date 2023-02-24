@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
     <head>
         {% load static %}
@@ -22,16 +22,17 @@
         <title>{% block title %} {% endblock title %}</title>
 
     </head>
+
     <body>
 
-        {% include 'header.html' %}
+        {% include 'inc/_header.html' %}
 
         {% block content %}
         {% endblock content %}
 
         {% include 'inc/_footer.html' %}
 
-        {% include 'scripts.html' %}
+        {% include 'inc/_scripts.html' %}
 
         {% block scripts %}
         {% endblock scripts %}

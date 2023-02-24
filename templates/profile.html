@@ -80,7 +80,7 @@
                         {% csrf_token %}
                         {% if messages %}
                         <div class="form-group">
-                            {% include 'message.html' %}
+                            {% include 'inc/_message.html' %}
                         </div>
                         {% endif %}
                         {% if form.non_field_errors %}

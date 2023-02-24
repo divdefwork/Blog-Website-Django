@@ -101,7 +101,7 @@ def tag_blogs(request, slug):
         "all_blogs": all_blogs
     }
 
-    return render(request, 'category_blogs.html', context)
+    return render(request, 'tag_blogs.html', context)
 
 
 def blog_details(request, slug):
