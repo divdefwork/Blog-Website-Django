@@ -10,7 +10,8 @@ class User(AbstractUser):
                                   "unique": "Email має бути унікальною"},
                               verbose_name="Електронна адреса")
     profile_image = models.ImageField(null=True, blank=True,
-                                      upload_to="profile_images",
+                                      upload_to="profile_images/%Y/%m/%d/",
+                                      default="profile_images/default.png",
                                       verbose_name="Зображення профілю")
     followers = models.ManyToManyField("Follow", verbose_name='Підписники')
 

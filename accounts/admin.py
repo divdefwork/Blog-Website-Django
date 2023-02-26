@@ -13,28 +13,37 @@ class UserAdmin(admin.ModelAdmin):
     list_editable = ('is_active',)
     save_on_top = True
     readonly_fields = ('date_joined', 'last_login', 'get_html_photo')
+
     fieldsets = (
-        ('Користувач', {
-            'fields': (('username', 'password'),
-                       'email',
-                       ('first_name', 'last_name'),)
+        (None, {
+            'fields': (
+                ('username', 'email'), 'password',
+                ('profile_image', 'get_html_photo'),
+            )
+        }),
+        ("Особиста інформація", {
+            "fields": (
+                ("first_name", "last_name"),
+            )
+        }
+         ),
+        ('Важливі дати', {
+            'fields': (
+                ('date_joined', 'last_login'),)
         }),
         ("Дозволи", {
             "fields": ("is_active", ("is_staff", "is_superuser"),
                        "groups", "user_permissions",)
         }),
         (None, {
-            'fields': (('profile_image', 'get_html_photo'), 'followers',)
-        }),
-        ('Важливі дати', {
-            'fields': (
-                ('date_joined', 'last_login'),)
+            'fields': ('followers',)
         }),
     )
 
     def get_html_photo(self, object):
         if object.profile_image:
-            return mark_safe(f"<img src='{object.profile_image.url}' width=50>")
+            return mark_safe(
+                f"<img src='{object.profile_image.url}' width=50>")
         else:
             return "Без фото"
 

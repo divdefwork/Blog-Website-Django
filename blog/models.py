@@ -65,7 +65,7 @@ class Blog(models.Model):
                              verbose_name="Заголовок")
     slug = models.SlugField(null=True, blank=True,
                             verbose_name="URL")
-    banner = models.ImageField(upload_to='blog_banners',
+    banner = models.ImageField(upload_to='blog_banners/%Y/%m/%d/',
                                verbose_name="Банер")
     description = RichTextField(verbose_name="Опис")
     created_date = models.DateField(auto_now_add=True,
