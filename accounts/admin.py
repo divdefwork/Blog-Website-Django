@@ -8,6 +8,7 @@ from .models import Follow, User
 class UserAdmin(admin.ModelAdmin):
     list_display = ('get_html_photo', "username", 'last_login', 'is_active')
     list_display_links = ('get_html_photo', 'username',)
+    ordering = ('username',)
     list_filter = ('username', 'date_joined')
     search_fields = ('username',)
     list_editable = ('is_active',)

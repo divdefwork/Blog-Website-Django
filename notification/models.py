@@ -19,5 +19,9 @@ class Notificaiton(models.Model):
         zip(NOTIFICATION_TYPES, NOTIFICATION_TYPES)))
     created_date = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        verbose_name = "Повідомлення"
+        verbose_name_plural = verbose_name
+
     def __str__(self) -> str:
         return self.text

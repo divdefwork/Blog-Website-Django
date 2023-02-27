@@ -115,7 +115,7 @@ class Reply(models.Model):
     comment = models.ForeignKey(Comment, related_name='comment_replies',
                                 on_delete=models.CASCADE,
                                 verbose_name="Коментар")
-    text = models.TextField(verbose_name="Зміст")
+    text = models.TextField(verbose_name="Текст відповіді")
     created_date = models.DateTimeField(auto_now_add=True,
                                         verbose_name="Дата створення")
 
