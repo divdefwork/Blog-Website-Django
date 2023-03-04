@@ -55,7 +55,7 @@
                         <ul class="list-group list-group-flush">
                             {% for blog in account.user_blogs.all %}
                                 <li class="list-group-item py-3">
-                                    <a href="{% url 'blog_details' blog.slug %}">
+                                    <a href="{{ blog.get_absolute_url }}">
                                         <p>{{ blog.title }}</p>
                                         <p>{{ blog.created_date }}</p>
                                     </a>

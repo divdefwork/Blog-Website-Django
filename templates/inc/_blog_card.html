@@ -3,13 +3,13 @@
 <div class="col-lg-6">
     <div class="blog-post">
         <div class="blog-thumb">
-            <a href="{% url 'blog_details' blog.slug %}">
+            <a href="{{ blog.get_absolute_url }}">
                 <img src="{{ blog.banner.url }}" alt="" />
             </a>
         </div>
         <div class="down-content">
             <span>{{ blog.category.title }}</span>
-            <a href="{% url 'blog_details' blog.slug %}">
+            <a href="{{ blog.get_absolute_url }}">
                 <h4>{{ blog.title }}</h4>
             </a>
             <ul class="post-info">
@@ -24,7 +24,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ blog.get_absolute_url }}">
                         {{ blog.blog_comments.all.count }}
                         Коментарі
                     </a>
@@ -42,7 +42,7 @@
                             {% if blog.tags.all.count > 0 %}
                                 {% for tag in blog.tags.all %}
                                     <li>
-                                        <a href="#">
+                                        <a href="{{ tag.get_absolute_url }}">
                                             {{ tag.title|title }}
                                         </a>
                                     </li>

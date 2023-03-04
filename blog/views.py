@@ -6,29 +6,38 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
 from django.core.paginator import PageNotAnInteger, EmptyPage, Paginator
 from django.utils.text import slugify
+from django.views.generic import ListView
 
 from accounts.models import User
 
-from .models import (
-    Blog,
-    Category,
-    Reply,
-    Tag,
-    Comment
-)
+from .models import (Blog, Category, Reply, Tag, Comment)
 from .forms import TextForm, AddBlogForm
 
 
-def home(request):
-    blogs = Blog.objects.order_by('-created_date')
-    tags = Tag.objects.order_by('-created_date')
+class BlogHome(ListView):
+    model = Blog
+    template_name = 'blog/home.html'
+    context_object_name = 'blogs'
+    ordering = ['-created_date']
 
-    context = {
-        "blogs": blogs,
-        "tags": tags
-    }
+    def get_context_data(self, **kwargs):
+        context = super(BlogHome, self).get_context_data(**kwargs)
+        context['tags'] = Tag.objects.order_by('-created_date')
+        return context
 
-    return render(request, 'blog/home.html', context)
+
+# class BlogsView(ListView):
+#     model = Blog
+#     queryset = Blog.objects.order_by('-created_date')
+#     template_name = 'blog/blogs.html'
+#     context_object_name = 'blogs'
+#     page_kwarg = 'page'
+#     paginate_by = 4
+#
+#     def get_context_data(self, **kwargs):
+#         context = super(BlogsBlog, self).get_context_data(**kwargs)
+#         context['tags'] = Tag.objects.order_by('-created_date')
+#         return context
 
 
 def blogs(request):

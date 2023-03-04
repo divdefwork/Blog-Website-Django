@@ -4,12 +4,14 @@ from django.utils.text import slugify
 
 from accounts.models import User
 from .slugs import generate_unique_slug
+from django.urls import reverse
 
 
 class Category(models.Model):
     title = models.CharField(max_length=150, unique=True,
                              verbose_name="Заголовок")
     slug = models.SlugField(null=True, blank=True,
+                            unique=True, db_index=True,
                             verbose_name="URL")
     created_date = models.DateField(auto_now_add=True,
                                     verbose_name="Дата створення")
@@ -28,11 +30,15 @@ class Category(models.Model):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        return reverse('category_blogs', kwargs={'slug': self.slug})
+
 
 class Tag(models.Model):
     title = models.CharField(max_length=150,
                              verbose_name="Заголовок")
     slug = models.SlugField(null=True, blank=True,
+                            unique=True, db_index=True,
                             verbose_name="URL")
     created_date = models.DateField(auto_now_add=True,
                                     verbose_name="Дата створення")
@@ -47,6 +53,9 @@ class Tag(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('tag_blogs', kwargs={'slug': self.slug})
 
 
 class Blog(models.Model):
@@ -64,6 +73,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=250,
                              verbose_name="Заголовок")
     slug = models.SlugField(null=True, blank=True,
+                            unique=True, db_index=True,
                             verbose_name="URL")
     banner = models.ImageField(upload_to='blog_banners/%Y/%m/%d/',
                                verbose_name="Банер")
@@ -87,6 +97,9 @@ class Blog(models.Model):
         else:
             self.slug = generate_unique_slug(self, self.title)
             super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('blog_details', kwargs={'slug': self.slug})
 
 
 class Comment(models.Model):

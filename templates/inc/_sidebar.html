@@ -9,7 +9,7 @@
                     <div class="content">
                         <ul>
                             {% for blog in blogs|slice:"3" %}
-                                <li><a href="{% url 'blog_details' blog.slug %}">
+                                <li><a href="{{ blog.get_absolute_url }}">
                                     <h5>{{ blog.title }}</h5>
                                     <span>{{ blog.created_date }}</span>
                                 </a></li>
@@ -27,7 +27,7 @@
                         <ul>
                             {% for category in categories %}
                                 <li>
-                                  <a href="{% url 'category_blogs' category.slug %}">
+                                  <a href="{{ category.get_absolute_url }}">
                                     - {{ category.title|title }}
                                   </a>
                                 </li>
@@ -36,6 +36,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-12">
                 <div class="sidebar-item tags">
                     <div class="sidebar-heading">
@@ -45,7 +46,7 @@
                         <ul>
                             {% for tag in tags %}
                                 <li>
-                                    <a href="{% url 'tag_blogs' tag.slug %}">
+                                    <a href="{{ tag.get_absolute_url }}">
                                         {{ tag.title|title }}
                                     </a>
                                 </li>
@@ -54,6 +55,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>

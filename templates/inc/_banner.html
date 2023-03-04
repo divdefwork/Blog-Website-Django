@@ -5,7 +5,7 @@
         <div class="owl-banner owl-carousel">
             {% for blog in blogs|slice:"8" %}
                 <div class="item">
-                    <a href="{% url 'blog_details' blog.slug %}">
+                    <a href="{{ blog.get_absolute_url }}">
                         <img src="{{ blog.banner.url }}" alt="">
                     </a>
                     <div class="item-content">
@@ -13,7 +13,7 @@
                             <div class="meta-category">
                                 <span>{{ blog.category|upper }}</span>
                             </div>
-                            <a href="{% url 'blog_details' blog.slug %}">
+                            <a href="{{ blog.get_absolute_url }}">
                                 <h4>{{ blog.title }}</h4>
                             </a>
                             <ul class="post-info">

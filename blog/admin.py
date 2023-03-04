@@ -2,6 +2,19 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 
 from .models import *
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title')
+    list_display_links = ('id', 'title')
+    search_fields = ('title',)
+    prepopulated_fields = {'slug': ('title',)}
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title')
+    list_display_links = ('id', 'title')
+    search_fields = ('title',)
+    prepopulated_fields = {'slug': ('title',)}
 
 
 @admin.register(Blog)
@@ -12,6 +25,7 @@ class BlogAdmin(admin.ModelAdmin):
     ordering = ('user', "created_date")
     list_filter = ('user', "category", "tags", 'created_date')
     search_fields = ('user',)
+    prepopulated_fields = {'slug': ('title',)}
     save_on_top = True
     readonly_fields = ('created_date', 'get_html_photo')
 
@@ -88,8 +102,8 @@ class ReplyAdmin(admin.ModelAdmin):
     )
 
 
-admin.site.register(Category)
-admin.site.register(Tag)
+# admin.site.register(Category)
+# admin.site.register(Tag)
 # admin.site.register(Blog)
 # admin.site.register(Comment)
 # admin.site.register(Reply)

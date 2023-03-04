@@ -12,12 +12,15 @@
                         Всього ({{ paginator.object_list.count }})
                     </h4>
                 </div>
+
                 <div class="col-lg-8">
                     <div class="all-blog-posts">
                         <div class="row">
                             {% for blog in blogs %}
                                 {% include 'inc/_blog_card.html' %}
                             {% endfor %}
+
+                            <!-- PAGINATION -->
                             <div class="col-lg-12">
                                 {% include 'inc/_pagination.html' %}
                             </div>
