@@ -10,12 +10,10 @@ from django.views.generic import ListView, DetailView
 from accounts.models import User
 from .forms import TextForm, AddBlogForm
 from .models import (Blog, Category, Reply, Tag, Comment)
+from .utils import DataMixin
 
 
-class HomeView(ListView):
-    model = Blog
-    context_object_name = 'blogs'
-    paginate_by = 4
+class HomeView(DataMixin, ListView):
     template_name = 'blog/home.html'
     ordering = ['-created_date']
 
@@ -25,10 +23,7 @@ class HomeView(ListView):
         return context
 
 
-class BlogListView(ListView):
-    model = Blog
-    context_object_name = 'blogs'
-    paginate_by = 4
+class BlogListView(DataMixin, ListView):
     template_name = 'blog/blogs.html'
     queryset = Blog.objects.order_by('-created_date')
 
@@ -53,10 +48,7 @@ class CategoryBlogsView(DetailView):
         return context
 
 
-class TagBlogsView(ListView):
-    model = Blog
-    context_object_name = 'blogs'
-    paginate_by = 4
+class TagBlogsView(DataMixin, ListView):
     template_name = 'blog/tag_blogs.html'
 
     def get_queryset(self):
