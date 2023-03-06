@@ -1,116 +1,75 @@
-from django.core import paginator
-from django.http import JsonResponse
-from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404, redirect, render
 from django.core.paginator import PageNotAnInteger, EmptyPage, Paginator
+from django.db.models import Q
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404, redirect, render
 from django.utils.text import slugify
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from accounts.models import User
-
-from .models import (Blog, Category, Reply, Tag, Comment)
 from .forms import TextForm, AddBlogForm
+from .models import (Blog, Category, Reply, Tag, Comment)
 
 
-class BlogHome(ListView):
+class HomeView(ListView):
     model = Blog
-    template_name = 'blog/home.html'
     context_object_name = 'blogs'
+    paginate_by = 4
+    template_name = 'blog/home.html'
     ordering = ['-created_date']
 
     def get_context_data(self, **kwargs):
-        context = super(BlogHome, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['tags'] = Tag.objects.order_by('-created_date')
         return context
 
 
-# class BlogsView(ListView):
-#     model = Blog
-#     queryset = Blog.objects.order_by('-created_date')
-#     template_name = 'blog/blogs.html'
-#     context_object_name = 'blogs'
-#     page_kwarg = 'page'
-#     paginate_by = 4
-#
-#     def get_context_data(self, **kwargs):
-#         context = super(BlogsBlog, self).get_context_data(**kwargs)
-#         context['tags'] = Tag.objects.order_by('-created_date')
-#         return context
-
-
-def blogs(request):
+class BlogListView(ListView):
+    model = Blog
+    context_object_name = 'blogs'
+    paginate_by = 4
+    template_name = 'blog/blogs.html'
     queryset = Blog.objects.order_by('-created_date')
-    tags = Tag.objects.order_by('-created_date')
-    page = request.GET.get('page', 1)
-    paginator = Paginator(queryset, 4)
 
-    try:
-        blogs = paginator.page(page)
-    except EmptyPage:
-        blogs = paginator.page(1)
-    except PageNotAnInteger:
-        blogs = paginator.page(1)
-        return redirect('blogs')
-
-    context = {
-        "blogs": blogs,
-        "tags": tags,
-        "paginator": paginator
-    }
-
-    return render(request, 'blog/blogs.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['tags'] = Tag.objects.order_by('-created_date')
+        context['paginator'] = Paginator(self.queryset, self.paginate_by)
+        return context
 
 
-def category_blogs(request, slug):
-    category = get_object_or_404(Category, slug=slug)
-    queryset = category.category_blogs.all()
-    tags = Tag.objects.order_by('-created_date')[:5]
-    page = request.GET.get('page', 1)
-    paginator = Paginator(queryset, 4)
-    all_blogs = Blog.objects.order_by('-created_date')[:5]
+class CategoryBlogsView(DetailView):
+    model = Category
+    context_object_name = 'category'
+    template_name = 'blog/category_blogs.html'
 
-    try:
-        blogs = paginator.page(page)
-    except EmptyPage:
-        blogs = paginator.page(1)
-    except PageNotAnInteger:
-        blogs = paginator.page(1)
-        return redirect('blogs')
-
-    context = {
-        "blogs": blogs,
-        "tags": tags,
-        "all_blogs": all_blogs
-    }
-
-    return render(request, 'blog/category_blogs.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        blogs = self.object.category_blogs.order_by('-created_date')
+        context['blogs'] = blogs
+        context['tags'] = Tag.objects.order_by('-created_date')[:5]
+        context['all_blogs'] = Blog.objects.order_by('-created_date')[:5]
+        return context
 
 
-def tag_blogs(request, slug):
-    tag = get_object_or_404(Tag, slug=slug)
-    queryset = tag.tag_blogs.all()
-    tags = Tag.objects.order_by('-created_date')[:5]
-    page = request.GET.get('page', 1)
-    paginator = Paginator(queryset, 4)
-    all_blogs = Blog.objects.order_by('-created_date')[:5]
+class TagBlogsView(ListView):
+    model = Blog
+    context_object_name = 'blogs'
+    paginate_by = 4
+    template_name = 'blog/tag_blogs.html'
 
-    try:
-        blogs = paginator.page(page)
-    except EmptyPage:
-        blogs = paginator.page(1)
-    except PageNotAnInteger:
-        blogs = paginator.page(1)
-        return redirect('blogs')
+    def get_queryset(self):
+        tag = get_object_or_404(Tag, slug=self.kwargs['slug'])
+        return tag.tag_blogs.all()
 
-    context = {
-        "blogs": blogs,
-        "tags": tags,
-        "all_blogs": all_blogs
-    }
-
-    return render(request, 'blog/tag_blogs.html', context)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        tag = get_object_or_404(Tag, slug=self.kwargs['slug'])
+        context['tags'] = Tag.objects.order_by('-created_date')[:5]
+        context['all_blogs'] = Blog.objects.order_by('-created_date')[:5]
+        context['tag'] = tag
+        return context
 
 
 def blog_details(request, slug):
