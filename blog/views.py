@@ -30,22 +30,57 @@ class BlogListView(DataMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['tags'] = Tag.objects.order_by('-created_date')
-        context['paginator'] = Paginator(self.queryset, self.paginate_by)
+        # context['paginator'] = context['page_obj'].paginator
         return context
 
+    def get(self, request, *args, **kwargs):
+        self.object_list = self.get_queryset()
+        paginator = self.get_paginator(self.object_list, self.paginate_by,
+                                       allow_empty_first_page=True)
+        page = request.GET.get('page', 1)
 
-class CategoryBlogsView(DetailView):
-    model = Category
-    context_object_name = 'category'
+        try:
+            blogs = paginator.page(page)
+        except EmptyPage:
+            blogs = paginator.page(1)
+        except PageNotAnInteger:
+            blogs = paginator.page(1)
+            return redirect('blogs')
+
+        context = self.get_context_data(blogs=blogs)
+        return self.render_to_response(context)
+
+
+class CategoryBlogsView(DataMixin, ListView):
     template_name = 'blog/category_blogs.html'
+
+    def get_queryset(self):
+        self.category = get_object_or_404(Category, slug=self.kwargs['slug'])
+        queryset = self.category.category_blogs.all()
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        blogs = self.object.category_blogs.order_by('-created_date')
-        context['blogs'] = blogs
         context['tags'] = Tag.objects.order_by('-created_date')[:5]
         context['all_blogs'] = Blog.objects.order_by('-created_date')[:5]
         return context
+
+    def get(self, request, *args, **kwargs):
+        self.object_list = self.get_queryset()
+        paginator = self.get_paginator(self.object_list, self.paginate_by,
+                                       allow_empty_first_page=True)
+        page = request.GET.get('page', 1)
+
+        try:
+            blogs = paginator.page(page)
+        except EmptyPage:
+            blogs = paginator.page(1)
+        except PageNotAnInteger:
+            blogs = paginator.page(1)
+            return redirect('blogs')
+
+        context = self.get_context_data(blogs=blogs)
+        return self.render_to_response(context)
 
 
 class TagBlogsView(DataMixin, ListView):
@@ -53,15 +88,31 @@ class TagBlogsView(DataMixin, ListView):
 
     def get_queryset(self):
         tag = get_object_or_404(Tag, slug=self.kwargs['slug'])
-        return tag.tag_blogs.all()
+        queryset = tag.tag_blogs.all().order_by('-created_date')
+        return queryset
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        tag = get_object_or_404(Tag, slug=self.kwargs['slug'])
         context['tags'] = Tag.objects.order_by('-created_date')[:5]
         context['all_blogs'] = Blog.objects.order_by('-created_date')[:5]
-        context['tag'] = tag
         return context
+
+    def get(self, request, *args, **kwargs):
+        self.object_list = self.get_queryset()
+        paginator = self.get_paginator(self.object_list, self.paginate_by,
+                                       allow_empty_first_page=True)
+        page = request.GET.get('page', 1)
+
+        try:
+            blogs = paginator.page(page)
+        except EmptyPage:
+            blogs = paginator.page(1)
+        except PageNotAnInteger:
+            blogs = paginator.page(1)
+            return redirect('blogs')
+
+        context = self.get_context_data(blogs=blogs)
+        return self.render_to_response(context)
 
 
 def blog_details(request, slug):
