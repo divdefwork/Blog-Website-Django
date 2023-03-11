@@ -20,9 +20,10 @@ INSTALLED_APPS = [
 
     'ckeditor',
 
-    'blog',
-    'accounts',
-    'notification',
+    'blog.apps.BlogConfig',
+    'accounts.apps.UserProfileConfig',
+    'notification.apps.NotificationConfig',
+
     'django_cleanup.apps.CleanupConfig',
 ]
 
