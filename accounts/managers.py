@@ -1,3 +1,13 @@
+""" Модуль містить клас CustomUserManager,
+    який є менеджером користувачів для кастомної моделі користувача.
+
+    create_user(self, username, email, password, **extra_fields) - метод для
+    створення нового користувача.
+
+    create_superuser(self, username, email, password, **extra_fields) - метод
+    для створення нового суперкористувача.
+"""
+
 from django.contrib.auth.base_user import BaseUserManager
 
 
