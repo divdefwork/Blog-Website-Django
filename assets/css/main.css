@@ -83,3 +83,8 @@ input, textarea {
 .owl-carousel .owl-item img {
     height: 440px !important;
 }
+
+.img-fluid-2 {
+    max-width: 400px;
+    height: 200px;
+}
