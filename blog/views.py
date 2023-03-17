@@ -18,6 +18,10 @@ class HomeView(DataMixin, ListView):
     ordering = ['-created_date']
 
     def get_context_data(self, **kwargs):
+        """
+            Метод get_context_data перевизначається
+            для додавання тегів до контекстних даних.
+        """
         context = super().get_context_data(**kwargs)
         context['tags'] = Tag.objects.order_by('-created_date')
         return context
@@ -28,12 +32,19 @@ class BlogListView(DataMixin, ListView):
     queryset = Blog.objects.order_by('-created_date')
 
     def get_context_data(self, **kwargs):
+        """
+            Метод get_context_data перевизначається,
+            щоб додати теги в контекст даних.
+        """
         context = super().get_context_data(**kwargs)
         context['tags'] = Tag.objects.order_by('-created_date')
-        # context['paginator'] = context['page_obj'].paginator
         return context
 
     def get(self, request, *args, **kwargs):
+        """
+            Метод get перевизначається, щоб вибирати сторінки блогів
+            та відображати їх на екрані.
+        """
         self.object_list = self.get_queryset()
         paginator = self.get_paginator(self.object_list, self.paginate_by,
                                        allow_empty_first_page=True)
