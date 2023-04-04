@@ -66,6 +66,8 @@
                                                         {% endif %}
                                                     </ul>
                                                 </div>
+
+                                                <!-- LIKE -->
                                                 {% if request.user.is_authenticated %}
                                                     <div class="col-6">
                                                         <ul class="post-share">
@@ -93,6 +95,7 @@
                                                         </ul>
                                                     </div>
                                                 {% else %}
+
                                                     <div class="col-6">
                                                         <ul class="post-share">
                                                             <li id="like-count">
