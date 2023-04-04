@@ -175,6 +175,21 @@ def add_reply(request, blog_id, comment_id):
 
 @login_required(login_url='login')
 def like_blog(request, pk):
+    """
+        View-функція, яка додає або видаляє позначку "подобається"
+        для блогу і повертає JSON-відповідь.
+
+        Args:
+            request: HttpRequest об'єкт.
+            pk (int): Primary key блогу.
+
+        Returns:
+            HttpResposne або JsonResponse об'єкт,
+            що містить дані про позначки "подобається".
+
+        Raises:
+            Http404: Якщо блог з переданим pk не існує.
+    """
     context = {}
     blog = get_object_or_404(Blog, pk=pk)
 
