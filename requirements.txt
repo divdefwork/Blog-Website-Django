@@ -1,5 +1,5 @@
 asgiref==3.6.0
-astroid==2.15.2
+astroid==2.15.4
 dill==0.3.6
 Django==4.2
 django-ckeditor==6.5.1
@@ -10,11 +10,11 @@ isort==5.12.0
 lazy-object-proxy==1.9.0
 mccabe==0.7.0
 Pillow==9.5.0
-platformdirs==3.2.0
-pylint==2.17.2
+platformdirs==3.3.0
+pylint==2.17.3
 python-decouple==3.8
 pytz==2023.3
-sqlparse==0.4.3
+sqlparse==0.4.4
 tomli==2.0.1
 tomlkit==0.11.7
 typing_extensions==4.5.0
